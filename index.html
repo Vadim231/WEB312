@@ -1,13 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<main>test</main>
+<div class="head">
+    <style>
+        .head {
+
+            width: auto;
+            height: 7vw;
+            background-image: url('images(5).jpg');
+            background-size: 100%;
+            padding: 10px 20px;
+
+        }
+    </style>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home. html">Главная</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li><a href="/services.html">Услуги</a></li>
+                <li><a href="/contact. html">Контакты</a></li>
+                <li><a href="/products.html">Продукты</a></li>
+                <li><a href="/support.html">Поддержка</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="search-form-container">
+            <form action="/search.html" method="get" class="search-form">
+                <input class="search-input" type="text" name="q" placeholder="Поиск.. ." />
+                <button type="submit" class="find-but">Искать</button>
+                <style>
+                    .search-form {
+                        display: flex;
+                        /* Кнопка и поле в одну строку */
+                        max-width: 400px;
+                    }
+
+                    .search-input {
+                        flex-grow: 1;
+                        /* Занимает доступное место */
+                        padding: 10px;
+                        border: 2px solid #ccc;
+                        border-radius: 20px 0 0 20px;
+                        /* Скругление слева */
+                        outline: none;
+                    }
+
+
+                    .find-but {
+
+                        padding: 10px 20px;
+                        border: 2px solid #007bff;
+                        background-color: #007bff;
+                        color: white;
+                        border-radius: 0 20px 20px 0;
+                        /* Скругление справа */
+                        cursor: pointer;
+
+                    }
+                </style>
+            </form>
+
+
+        </div>
+
+        <style>
+            nav ul li a {
+
+                /* Занимает доступное место */
+                padding: 10px;
+                width: 5vw;
+                border: 2px solid #ccc;
+                border-radius: 0px 20px 0 20px;
+                /* Скругление слева */
+                outline: none;
+                display: block;
+                padding: 10px 20px;
+                color: white;
+                border: 2px solid #007bff;
+                background-color: #007bff;
+
+            }
+
+            nav ul li {
+                float: left;
+                padding: 10px 20px;
+            }
+
+            nav ul li ul {
+                display: none;
+            }
+
+            nav ul li:hover ul {
+                display: block;
+            }
+
+            .search-form-container {
+                padding: 10px 20px;
+                display: block;
+                float: right;
+            }
+        </style>
+    </header>
+</div>
+
+
+
+
+<div class="body">
+
+    <ul>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate perspiciatis hic sapiente, libero
+        placeat
+        repellendus porro ad et sint laudantium suscipit! Id veritatis perferendis ad accusantium rem nobis
+        dignissimos quidem.</ul>
+
+
+    <style>
+        .body {
+            /* background-color: black; */
+            width: auto;
+            height: 50vw;
+            background-image: url('head.jpg');
+            background-size: 100%;
+            padding: 10px 20px;
+        }
+    </style>
+</div>
+<footer class="foot">
+
+    <nav>
+        <a href="/telegramm">Телега</a> |
+        <a href="/m@x">,Max</a>
+    </nav>
+    <p style="font-size: 120%; color: azure; text-align: right;">&copy; 2026 NET Trading. Все права защищены.</p>
+    <style>
+        .foot {
+            width: auto;
+            height: 7vw;
+            background-image: url('images(5).jpg');
+            background-size: 100%;
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li ul {
+            display: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+    </style>
+
+
+</footer>
 </body>
+
 </html>
