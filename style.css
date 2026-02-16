@@ -1,0 +1,18 @@
+.item{
+    height: fit-content;
+    width: 75px;
+}
+.picture{
+    object-fit: fill;
+    border-radius: 8px;
+    width: 75px;
+    height: 75px;
+}
+.name{
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.price{
+    font-family: sans-serif;
+    font-size: 18px;
+}

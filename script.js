@@ -22,6 +22,10 @@ adverts.forEach(advert => {
     mainPage.innerHTML += "<div class='item'>" +
         `<img class='picture' src=${advert.imageUrl} alt="">` +
         `<p class='name'>${advert.name}</p>` +
-        `<p class='price'><b>${advert.price} ₽</b></p>`
+        `<p class='price'><b>${advert.price} ₽</b></p>` +
+        `<button>${advert.isFavorite ? "♡" : "♥"}></button>`
         "</div>";
 })
+function changeIsFavorite(advert){
+    advert.isFavorite = !(advert.isFavorite);
+}
