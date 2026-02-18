@@ -18,18 +18,26 @@ adverts.push(new Advert("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIq
 adverts.push(new Advert("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false));
 adverts.push(new Advert("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true));
 
-function changeIsFavorite(advert){
+const changeIsFavorite = function(e, advert){
     advert.isFavorite = !(advert.isFavorite);
+    if(advert.isFavorite){
+        e.target.innerText = "♥";
+    }
+    else{
+        e.target.innerText = "♡";
+    }
 }
 
 let mainPage = document.getElementById("main-page");
-adverts.forEach(advert => {
+adverts.forEach((advert, index) => {
     mainPage.innerHTML += "<div class='item'>" +
         `<img class='picture' src=${advert.imageUrl} alt="">` +
         `<p class='name'>${advert.name}</p>` +
         `<p class='price'><b>${advert.price} ₽</b></p>` +
-        `<button id='btn'>${advert.isFavorite ? "♥" : "♡"}</button>`
+        `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`
         "</div>";
-    btn = document.getElementById("btn");
-    btn.addEventListener("click", changeIsFavorite(advert));
 })
+adverts.forEach((advert, index) => {
+    const btn = document.getElementById(`btn${index}`);
+    btn.addEventListener("click", (e) => changeIsFavorite(e, advert));
+});
