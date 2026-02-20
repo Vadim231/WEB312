@@ -124,3 +124,29 @@ adverts.forEach((advert, index) => {
     const btn = document.getElementById(`btn${index}`);
     btn.addEventListener("click", (e) => changeIsFavorite(e, advert));
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput= document.getElementById('search-input');
+    const query = this.value.toLowerCase();
+    const resultsContainer = document.getElementById('results-container');
+    const mainContainer=document.getElementById('main-page');
+    resultsContainer.innerHTML = '';
+    if (query === ''){
+        if(mainContainer)mainContainer.style.display='block';
+        resultsContainer.style.display='none';
+    }
+    const filteredProducts = adverts.filter(advert => advert.name.toLowerCase().includes(query));
+    if(filteredProducts>0) {
+        if (mainContainer) mainContainer.style.display = 'none';
+        resultsContainer.style.display = 'block';
+        filteredProducts.forEach(adverts => {
+            const productItem = document.createElement('div');
+            productItem.classList.add('product-item');
+            productItem.innerHTML = "<div class='item'>" +
+                `<img class='picture' src=${advert.imageUrl} alt="">` +
+                `<p class='name'>${advert.name}</p>` +
+                `<p class='price'><b>${advert.price} ₽</b></p>` +
+                `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`
+            "</div>";
+            resultsContainer.appendChild(productItem);
+        });}});
+

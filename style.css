@@ -50,7 +50,7 @@ header{
     justify-content: end;
 }
 .search-button{
-    margin: 0 10px 0 10px;
+    margin: 0 10px 0 10px;}
 *{
     margin: 0;
     padding: 0;
@@ -341,4 +341,134 @@ h1
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidemenu {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.sidemenu > div {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.sidemenu > div:last-child {
+    border-bottom: none;
+}
+.sidemenu label {
+    display: block;
+    margin-bottom: 10px;
+}
+.sidemenu input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sidemenu button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+.sidemenu button:hover {
+    background-color: #ddd;
+}
+.selection .checkbox-list {
+    margin-left: 0;
+}
+.selection .show-more-button,
+.selection .collapse-button {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: blue;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+.head{
+    font-weight: bold;
+}
+.body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidemenu {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.sidemenu > div {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.sidemenu > div:last-child {
+    border-bottom: none;
+}
+.sidemenu label {
+    display: block;
+    margin-bottom: 10px;
+}
+.sidemenu input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sidemenu button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+.sidemenu button:hover {
+    background-color: #ddd;
+}
+.selection .checkbox-list {
+    margin-left: 0;
+}
+.selection .show-more-button,
+.selection .collapse-button {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: blue;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+.head{
+    font-weight: bold;
+}
+.search-container input{
+    width: 250px;
+
 }
