@@ -41,8 +41,14 @@ h1 {
     font-size: 20px;
     cursor: pointer;
 }
+.back_button:hover
+{
+    background: white;
+    border-radius: 10px;
+    transform: translateY(-2px);
+}
 
-.phone-button.show-number {
+.phone_button.show_number {
     background: white;
 }
 
@@ -153,7 +159,14 @@ h1 {
 {
     background: none;
     padding: 20px;
-    border-radius: 12px;
+    clip-path: polygon(
+       20px 0,
+       100% 0,
+       100% calc(100% - 20px),
+       calc(100% - 20px) 100%,
+       0 100%,
+       0 20px
+    );
     margin: 20px 0;
 }
 
@@ -219,7 +232,6 @@ h1 {
 {
     background: yellow;
     color: rebeccapurple;
-    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s;
@@ -269,7 +281,7 @@ h1 {
     text-overflow: ellipsis;
 }
 
-.phone_button.show-number {
-    background: rebeccapurple;
+.phone_button.show_number {
+    background: black;
     color: white;
 }
