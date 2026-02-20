@@ -11,7 +11,8 @@ body
     padding: 20px;
 }
 
-h1 {
+h1
+{
     font-size: 24px;
     color: blue;
 }
@@ -41,15 +42,12 @@ h1 {
     font-size: 20px;
     cursor: pointer;
 }
+
 .back_button:hover
 {
     background: white;
     border-radius: 10px;
     transform: translateY(-2px);
-}
-
-.phone_button.show_number {
-    background: white;
 }
 
 .content
@@ -138,7 +136,6 @@ h1 {
     padding: 10px;
     width: 100%;
     cursor: pointer;
-    transition: background 0.2s;
     clip-path: polygon(
         20px 0,
         100% 0,
@@ -147,12 +144,24 @@ h1 {
         0 100%,
         0 20px
     );
+    overflow: hidden;
 }
 
 .phone_button:hover
 {
     background: rebeccapurple;
     color: white;
+}
+
+.phone_button.show_number
+{
+    background: black;
+    color: white;
+}
+
+.phone_button.show_number:hover
+{
+    background: rebeccapurple;
 }
 
 .sellet_card
@@ -233,7 +242,7 @@ h1 {
     background: yellow;
     color: rebeccapurple;
     overflow: hidden;
-    cursor: pointer;
+    overflow: hidden;
     transition: transform 0.2s;
     clip-path: polygon(
             15px 0,
@@ -279,9 +288,4 @@ h1 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.phone_button.show_number {
-    background: black;
-    color: white;
 }
