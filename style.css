@@ -24,3 +24,31 @@
     display: flex;
     flex-wrap: wrap;
 }
+header{
+    height: fit-content;
+    display: flex;
+}
+.logo{
+    object-fit: fill;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    margin: 5px 20px 5px 5px;
+}
+.title{
+    font-size: 22px;
+    font-family: SansSerif;
+}
+.shapka{
+    display: flex;
+    margin: 0 20px;
+}
+.search{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: end;
+}
+.search-button{
+    margin: 0 10px 0 10px;
+}
