@@ -1,0 +1,188 @@
+@keyframes neon_Pulse {
+    0% { text-shadow: 0 0 5px deepskyblue, 0 0 10px deepskyblue; }
+    50% { text-shadow: 0 0 10px rebeccapurple, 0 0 20px rebeccapurple, 0 0 30px rebeccapurple; }
+    100% { text-shadow: 0 0 5px deepskyblue, 0 0 10px deepskyblue; }
+}
+
+@keyframes neon_Line {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(200%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes fade_In_Dark {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes hologram {
+    0% { transform: rotate(0deg); opacity: 0.3; }
+    50% { transform: rotate(180deg); opacity: 0.6; }
+    100% { transform: rotate(360deg); opacity: 0.3; }
+}
+
+.sidemenu .head {
+    animation: neon_Pulse 3s infinite;
+}
+
+.sidemenu > div {
+    animation: fade_In_Dark 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.sidemenu > div:nth-child(1) { animation-delay: 0.1s; }
+.sidemenu > div:nth-child(2) { animation-delay: 0.15s; }
+.sidemenu > div:nth-child(3) { animation-delay: 0.2s; }
+.sidemenu > div:nth-child(4) { animation-delay: 0.25s; }
+.sidemenu > div:nth-child(5) { animation-delay: 0.3s; }
+.sidemenu > div:nth-child(6) { animation-delay: 0.35s; }
+.sidemenu > div:nth-child(7) { animation-delay: 0.4s; }
+.sidemenu > div:nth-child(8) { animation-delay: 0.45s; }
+.sidemenu > div:nth-child(9) { animation-delay: 0.5s; }
+.sidemenu > div:nth-child(10) { animation-delay: 0.55s; }
+.sidemenu > div:nth-child(11) { animation-delay: 0.6s; }
+.sidemenu > div:nth-child(12) { animation-delay: 0.65s; }
+
+.sidemenu .filter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, deepskyblue, rebeccapurple, transparent);
+    animation: neon_Line 3s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sidemenu .filter .head {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sidemenu .filter::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+    animation: hologram 10s linear infinite;
+    pointer-events: none;
+}
+
+.sidemenu .choose:hover {
+    color: black;
+    text-shadow: 0 0 5px deepskyblue;
+    transform: translateX(3px);
+}
+
+.sidemenu choose:hover input[type="checkbox"] {
+    border-color: deepskyblue;
+    box-shadow: 0 0 15px deepskyblue;
+}
+
+.sidemenu input[type="checkbox"]:checked {
+    transform: scale(1.2);
+}
+
+.sidemenu button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidemenu button:hover {
+    border-color: deepskyblue;
+    color: white;
+    background: rebeccapurple;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.sidemenu button:active {
+    transform: translateY(0);
+}
+
+.head_Color:hover
+{
+    color: red;
+    transform: scale(1);
+}
+
+.sidemenu input[type="text"]:focus {
+    border-color: rebeccapurple;
+    box-shadow: 0 0 10px rgba(102, 51, 153, 0.3), inset 0 0 10px rgba(102, 51, 153, 0.1);
+    outline: none;
+    background-color: gainsboro;
+    transform: scale(1);
+}
+
+.show-more-button,
+.collapse-button {
+    transition: all 0.3s ease;
+    position: relative;
+    padding-right: 20px;
+    display: inline-block;
+    display: block;
+    text-align: center;
+}
+
+.show-more-button::after,
+.collapse-button::after {
+    content: '⇒';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.collapse-button::after {
+    content: '⇐';
+}
+
+.show-more-button:hover::after,
+.collapse-button:hover::after {
+    transform: translateX(5px);
+}
+
+.show-more-button:hover,
+.collapse-button:hover {
+    text-shadow: 0 0 8px rebeccapurple;
+    transform: scale(1.05);
+}
+
+.sidemenu > div {
+    position: relative;
+    transition: padding-left 0.3s ease;
+}
+
+.sidemenu > div:hover {
+    padding-left: 10px;
+    background: linear-gradient(90deg, rgba(0, 191, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.sidemenu > div::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 3px;
+    background: linear-gradient(180deg, deepskyblue, rebeccapurple);
+    transition: height 0.3s ease;
+}
+
+.sidemenu > div:hover::before {
+    height: 100%;
+}
