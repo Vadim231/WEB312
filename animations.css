@@ -172,7 +172,16 @@
     background: linear-gradient(180deg, deepskyblue, rebeccapurple);
     transition: height 0.3s ease;
 }
-
+.search-container button:hover{
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-color: deepskyblue;
+    color: white;
+    background: #ddd;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    transform: translateY(-2px);
+}
 .sidemenu > div:hover::before {
     height: 100%;
 }
