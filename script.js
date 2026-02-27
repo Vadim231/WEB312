@@ -39,6 +39,15 @@ let adverts = [];
     });
 
 adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
 adverts.push(new Adverta("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false));
 adverts.push(new Adverta("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true));
 
@@ -71,13 +80,11 @@ const changeIsFavorite = function(e, advert){
     const mainContainer=document.getElementById('main-page');
     resultsContainer.innerHTML = '';
     if (query === ''){
-        if(mainContainer)mainContainer.style.display='block';
         resultsContainer.style.display='none';
     }
     const filteredProducts = adverts.filter(advert => advert.name.toLowerCase().includes(query));
     if(filteredProducts>0) {
         if (mainContainer) mainContainer.style.display = 'none';
-        resultsContainer.style.display = 'block';
         filteredProducts.forEach(advert => {
             const productItem = document.createElement('div');
             productItem.classList.add('product-item');

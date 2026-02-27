@@ -1,10 +1,7 @@
 .item{
     height: fit-content;
-    width: 200px;
-    padding: 5px;
-    margin-top: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
+    flex: 1 0 200px;
+    padding: 25px;
 }
 .picture{
     object-fit: fill;
@@ -354,6 +351,36 @@ body {
     margin:5px;
 }
 
+
+.selection .checkbox-list {
+    margin-left: 0;
+}
+.selection .show-more-button,
+.selection .collapse-button {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: blue;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+.head{
+    font-weight: bold;
+}
+.body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.sidemenu {
+    flex: 1 0 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
 .sidemenu label {
     display: block;
     margin-bottom: 10px;
@@ -378,35 +405,6 @@ body {
 .sidemenu button:hover {
     background-color: #ddd;
 }
-.selection .checkbox-list {
-    margin-left: 0;
-}
-.selection .show-more-button,
-.selection .collapse-button {
-    margin-top: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: blue;
-    font-size: 0.9em;
-    transition: color 0.2s ease;
-}
-.head{
-    font-weight: bold;
-}
-.body {
-    font-family: Arial;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.sidemenu {
-    width: 300px;
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 5px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
 .sidemenu > div {
     margin-bottom: 20px;
     padding-bottom: 15px;
@@ -421,4 +419,7 @@ body {
 .search-container input{
     margin: 5px;
     width: 250px;
+}
+.container-search{
+    flex: 1 1 auto;
 }
