@@ -1,174 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Веб-сайт</title>
+    <style>
+        /* Стили для основного контейнера шапки */
+        .head {
+            width: auto;
+            height: 7vw;
+            /* Высота шапки в зависимости от ширины вьюпорта */
+            background-image: url('images(5).jpg');
+            /* Фоновое изображение */
+            background-size: 100%;
+            /* Масштабирование фона */
+            padding: 10px 20px;
+            /* Внутренние отступы */
+            display: flex;
+            /* Использование flexbox для расположения элементов */
+            align-items: center;
+            /* Выравнивание элементов по центру по вертикали */
+            justify-content: space-between;
+            /* Распределение пространства между элементами */
+        }
+
+        /* Стили для логотипа */
+        .logo {
+            height: 5vw;
+            /* Высота логотипа */
+            margin-right: 20px;
+            /* Внешний отступ справа от логотипа */
+
+        }
+
+        .logos {
+            height: 5vw;
+            /* Высота логотипа */
+            margin-right: 20px;
+            /* Внешний отступ справа от логотипа */
+            font-family: 'Arial Black', sans-serif;
+            color: #ccc;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            perspective: 800px;
+            display: inline-block;
+            background: linear-gradient(45deg, #ff8a00, #e52e71, #2575fc, #ff8a00);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation:
+                gradient-shift 8s ease infinite,
+                shadow-pulse 3s ease infinite;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transform-style: preserve-3d;
+            padding: 0 20px;
+            border-radius: 10px;
+
+        }
+
+        .logos:hover {
+            transform: rotateY(20deg) rotateX(5deg) scale(1.08);
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes shadow-pulse {
+
+            0%,
+            100% {
+                text-shadow: 0 0 8px rgba(100, 200, 255, 0.4);
+            }
+
+            50% {
+                text-shadow: 0 0 15px rgba(229, 46, 113, 0.5);
+            }
+        }
+
+
+        /* Стили для навигационного меню */
+        nav ul {
+
+            list-style: none;
+            /* Убираем маркеры списка */
+            padding: 0;
+            /* Убираем внутренний отступ */
+            margin: 0;
+            /* Убираем внешний отступ */
+            display: flex;
+            /* Располагаем элементы списка в строку */
+        }
+
+        /* Стили для элементов навигационного меню */
+        nav ul li {
+            margin-left: 20px;
+            /* Внешний отступ слева для разделения пунктов меню */
+            /* float: left; */
+            /* Удалено, так как используется flexbox */
+        }
+
+        /* Стили для ссылок навигационного меню */
+        nav ul li a {
+            text-decoration: none;
+            /* Убираем подчеркивание ссылок */
+            width: 6vw;
+            padding: 10px 20px;
+            /* Внутренние отступы */
+            color: white;
+            /* Цвет текста */
+            border: 2px solid #007bff;
+            /* Граница */
+            background-color: #007bff;
+            /* Цвет фона */
+            border-radius: 0px 20px 0px 20px;
+            /* Скругление углов */
+            display: block;
+            /* Делаем ссылку блочным элементом */
+        }
+
+        /* Стили для контейнера формы поиска */
+        .search-form-container {
+            padding: 10px 20px;
+            /* display: block; */
+            /* Удалено, так как flexbox уже управляет расположением */
+            /* float: right; */
+            /* Удалено, так как flexbox уже управляет расположением */
+            display: flex;
+            /* Используем flexbox для выравнивания */
+            align-items: center;
+        }
+
+        /* Стили для формы поиска */
+        .search-form {
+            display: flex;
+            /* Располагаем поля ввода и кнопку в строку */
+            max-width: 400px;
+            /* Максимальная ширина формы */
+        }
+
+        /* Стили для поля ввода поиска */
+        .search-input {
+            flex-grow: 1;
+            /* Поле ввода занимает доступное пространство */
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 20px 0 0 20px;
+            /* Скругление слева */
+            outline: none;
+            /* Убираем обводку при фокусе */
+        }
+
+        /* Стили для кнопки поиска */
+        .find-but {
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            background-color: #007bff;
+            color: white;
+            border-radius: 0 20px 20px 0;
+            /* Скругление справа */
+            cursor: pointer;
+            /* Изменяем курсов на указатель */
+        }
+
+        /* Стили для основного контента */
+        .body {
+            width: auto;
+            height: 50vw;
+            /* Высота контента */
+            background-image: url('head.jpg');
+            /* Фоновое изображение */
+            background-size: 100%;
+            /* Масштабирование фона */
+            padding: 10px 20px;
+            /* Внутренние отступы */
+        }
+
+        /* Стили для футера */
+        .foot {
+            width: auto;
+            height: 7vw;
+            /* Высота футера */
+            background-image: url('images(5).jpg');
+            /* Фоновое изображение */
+            background-size: 100%;
+            /* Масштабирование фона */
+            padding: 10px 20px;
+            /* Внутренние отступы */
+            display: flex;
+            /* Используем flexbox */
+            align-items: left;
+            /* Выравнивание по центру */
+            justify-content: space-between;
+            /* Распределение пространства */
+        }
+
+        /* Стили для навигации в футере */
+        .foot nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .foot nav a {
+            color: azure;
+            /* Цвет текста */
+            text-decoration: none;
+            /* Убираем подчеркивание */
+            margin: 0 10px;
+            /* Отступы между ссылками */
+        }
+
+        .image-container {
+            position: relative;
+            /* Необходимо для позиционирования текста */
+            display: inline-block;
+            /* Чтобы контейнер занимал только нужное место */
+            margin: 10px;
+            /* Отступ между элементами */
+            padding: 10px 20px;
+
+        }
+
+        /* Стили для ссылок */
+        .image-container a {
+            text-decoration: none;
+            /* Убираем подчеркивание ссылок */
+            color: white;
+            /* Цвет текста по умолчанию */
+            font-weight: bold;
+            /* Жирный шрифт */
+        }
+
+
+
+        .logo-foot {
+            display: block;
+            /* Чтобы изображение было блочным элементом */
+            width: 100px;
+            /* Примерная ширина логотипа, настройте по необходимости */
+            height: auto;
+            /* Автоматическая высота для сохранения пропорций */
+            opacity: 0.7;
+            /* Небольшая прозрачность для эффекта */
+        }
+
+        /* Стили для текста, который будет поверх изображения */
+        .overlay-text {
+            position: absolute;
+            /*Абсолютное позиционирование внутри relative-контейнера */
+            top: 50%;
+            /*Размещаем верхнюю границу текста посередине */
+            left: 50%;
+            /* Размещаем левую границу текста посередине */
+            transform: translate(-50%, -50%);
+            /* Сдвигаем текст, чтобы он был точно по центру */
+            color: white;
+            /* Цвет текста */
+            font-size: 1vw;
+            /* Размер шрифта в зависимости от ширины вьюпорта */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Полупрозрачный черный фон для лучшей читаемости */
+            padding: 5px 10px;
+            /* Внутренние отступы */
+            border-radius: 5px;
+            /* Скругление углов фона */
+            text-align: center;
+            /* Выравнивание текста по центру */
+        }
+    </style>
 </head>
 
 <body>
 <div class="head">
-    <style>
-        .head {
+    <!-- Логотип размещен в самом начале, чтобы быть в левом верхнем углу -->
+    <div class="logos">
+        <p>i-Shop</p>
+        <!-- <img src="logo1.jpg" alt="Логотип компании" class="logo"> -->
 
-            width: auto;
-            height: 7vw;
-            background-image: url('images(5).jpg');
-            background-size: 100%;
-            padding: 10px 20px;
-
-        }
-    </style>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/home. html">Главная</a></li>
-                <li><a href="/about.html">О нас</a></li>
-                <li><a href="/services.html">Услуги</a></li>
-                <li><a href="/contact. html">Контакты</a></li>
-                <li><a href="/products.html">Продукты</a></li>
-                <li><a href="/support.html">Поддержка</a></li>
-            </ul>
-        </nav>
+    </div>
 
 
-        <div class="search-form-container">
-            <form action="/search.html" method="get" class="search-form">
-                <input class="search-input" type="text" name="q" placeholder="Поиск.. ." />
-                <button type="submit" class="find-but">Искать</button>
-                <style>
-                    .search-form {
-                        display: flex;
-                        /* Кнопка и поле в одну строку */
-                        max-width: 400px;
-                    }
+    <nav>
+        <ul>
+            <!-- Пункты меню -->
+            <li><a href="/home.html">Главная</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            <li><a href="/services.html">Услуги</a></li>
+            <li><a href="/contact.html">Контакты</a></li>
+            <li><a href="/products.html">Продукты</a></li>
+            <li><a href="/support.html">Поддержка</a></li>
+        </ul>
+    </nav>
 
-                    .search-input {
-                        flex-grow: 1;
-                        /* Занимает доступное место */
-                        padding: 10px;
-                        border: 2px solid #ccc;
-                        border-radius: 20px 0 0 20px;
-                        /* Скругление слева */
-                        outline: none;
-                    }
-
-
-                    .find-but {
-
-                        padding: 10px 20px;
-                        border: 2px solid #007bff;
-                        background-color: #007bff;
-                        color: white;
-                        border-radius: 0 20px 20px 0;
-                        /* Скругление справа */
-                        cursor: pointer;
-
-                    }
-                </style>
-            </form>
-
-
-        </div>
-
-        <style>
-            nav ul li a {
-
-                /* Занимает доступное место */
-                padding: 10px;
-                width: 5vw;
-                border: 2px solid #ccc;
-                border-radius: 0px 20px 0 20px;
-                /* Скругление слева */
-                outline: none;
-                display: block;
-                padding: 10px 20px;
-                color: white;
-                border: 2px solid #007bff;
-                background-color: #007bff;
-
-            }
-
-            nav ul li {
-                float: left;
-                padding: 10px 20px;
-            }
-
-            nav ul li ul {
-                display: none;
-            }
-
-            nav ul li:hover ul {
-                display: block;
-            }
-
-            .search-form-container {
-                padding: 10px 20px;
-                display: block;
-                float: right;
-            }
-        </style>
-    </header>
+    <div class="search-form-container">
+        <form action="/search.html" method="get" class="search-form">
+            <input class="search-input" type="text" name="q" placeholder="Поиск.. ." />
+            <button type="submit" class="find-but">Искать</button>
+        </form>
+    </div>
 </div>
-
-
-
 
 <div class="body">
-
-    <ul>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate perspiciatis hic sapiente, libero
-        placeat
-        repellendus porro ad et sint laudantium suscipit! Id veritatis perferendis ad accusantium rem nobis
-        dignissimos quidem.</ul>
-
-
-    <style>
-        .body {
-            /* background-color: black; */
-            width: auto;
-            height: 50vw;
-            background-image: url('head.jpg');
-            background-size: 100%;
-            padding: 10px 20px;
-        }
-    </style>
+    <ul>
+        <!-- Список с текстом, который будет располагаться под шапкой -->
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate perspiciatis hic sapiente, libero
+            placeat
+            repellendus porro ad et sint laudantium suscipit! Id veritatis perferendis ad accusantium rem nobis
+            dignissimos quidem.</li>
+    </ul>
 </div>
+
 <footer class="foot">
 
     <nav>
-        <a href="/telegramm">Телега</a> |
-        <a href="/m@x">,Max</a>
+        <!-- Ссылки в футере -->
+
+        <div class="image-container">
+            <!-- Ссылка, содержащая само изображение -->
+            <a href="/telegramm">
+                <img src="logo.jpg" alt="Логотип Telegram" class="logo-foot">
+                <!-- Текст, который будет поверх изображения -->
+                <span class="overlay-text">Telegram</span>
+            </a>
+        </div>
+
+        <!-- Второй элемент: Max -->
+        <div class="image-container">
+            <!-- Ссылка, содержащая само изображение -->
+            <a href="/m@x">
+                <img src="max.png" alt="Логотип Max" class="logo-foot">
+                <!-- Текст, который будет поверх изображения -->
+                <span class="overlay-text">Max</span>
+            </a>
+        </div>
+
     </nav>
-    <p style="font-size: 120%; color: azure; text-align: right;">&copy; 2026 NET Trading. Все права защищены.</p>
-    <style>
-        .foot {
-            width: auto;
-            height: 7vw;
-            background-image: url('images(5).jpg');
-            background-size: 100%;
-            padding: 10px 20px;
-        }
-
-        nav ul li a {
-            display: block;
-            padding: 10px 20px;
-        }
-
-        nav ul li {
-            float: left;
-        }
-
-        nav ul li ul {
-            display: none;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-        }
-    </style>
-
-
+    <!-- Информация об авторских правах -->
+    <p style="font-size: 120%; color: azure; text-align: right;">© 2026 NET Trading. Все права защищены.</p>
 </footer>
 </body>
 
