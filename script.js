@@ -80,6 +80,56 @@ const searching = function (){
         })
     }
 }
+let minPrice = document.getElementById("minPrice");
+let maxPrice = document.getElementById("maxPrice");
+const priceSearching = function (e){
+    const min = Number(minPrice.value.trim());
+    const max = Number(maxPrice.value.trim());
+    console.log('323');
+    document.querySelectorAll('.item').forEach(el => el.remove());
+    adverts.forEach((advert, index) => {
+        if(minPrice.value.trim() === "" && maxPrice.value.trim() === ""){
+            mainPage.innerHTML += "<div class='item'>" +
+                `<img class='picture' src=${advert.imageUrl} alt="">` +
+                `<a href='about.html' class='aname'>${advert.name}</a>` +
+                `<p class='price'><b>${advert.price} ₽</b></p>` +
+                `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                "</div>";
+        }
+        else if(minPrice.value.trim() === "") {
+            if(advert.price <= max){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+        else if(maxPrice.value.trim() === ""){
+            if(advert.price >= min){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+        else{
+            if(advert.price >= min && advert.price <= max ){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+    })
+}
+minPrice.addEventListener("change", priceSearching);
+maxPrice.addEventListener("change", priceSearching)
 let searchBut = document.getElementById("search-button");
 searchBut.addEventListener("click", searching);
 const changeIsFavorite = function(e, advert){
