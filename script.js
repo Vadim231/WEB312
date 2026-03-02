@@ -51,6 +51,7 @@ adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNI
 adverts.push(new Adverta("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false));
 adverts.push(new Adverta("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true));
 
+
 let mainPage = document.getElementById("main-page");
 const searching = function (){
     console.log("322");
