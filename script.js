@@ -51,6 +51,87 @@ adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNI
 adverts.push(new Adverta("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false));
 adverts.push(new Adverta("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true));
 
+
+let mainPage = document.getElementById("main-page");
+const searching = function (){
+    console.log("322");
+    document.querySelectorAll('.item').forEach(el => el.remove());
+    let searchInput = document.getElementById("search-input").value;
+    if(searchInput.trim() === ""){
+        adverts.forEach((advert, index) => {
+            mainPage.innerHTML += "<div class='item'>" +
+                `<img class='picture' src=${advert.imageUrl} alt="">` +
+                `<a href='about.html' class='aname'>${advert.name}</a>` +
+                `<p class='price'><b>${advert.price} ₽</b></p>` +
+                `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                "</div>";
+        })
+    }
+    else{
+        adverts.forEach((advert, index) => {
+            if(advert.name.includes(searchInput)){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        })
+    }
+}
+let minPrice = document.getElementById("minPrice");
+let maxPrice = document.getElementById("maxPrice");
+const priceSearching = function (e){
+    const min = Number(minPrice.value.trim());
+    const max = Number(maxPrice.value.trim());
+    console.log('323');
+    document.querySelectorAll('.item').forEach(el => el.remove());
+    adverts.forEach((advert, index) => {
+        if(minPrice.value.trim() === "" && maxPrice.value.trim() === ""){
+            mainPage.innerHTML += "<div class='item'>" +
+                `<img class='picture' src=${advert.imageUrl} alt="">` +
+                `<a href='about.html' class='aname'>${advert.name}</a>` +
+                `<p class='price'><b>${advert.price} ₽</b></p>` +
+                `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                "</div>";
+        }
+        else if(minPrice.value.trim() === "") {
+            if(advert.price <= max){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+        else if(maxPrice.value.trim() === ""){
+            if(advert.price >= min){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+        else{
+            if(advert.price >= min && advert.price <= max ){
+                mainPage.innerHTML += "<div class='item'>" +
+                    `<img class='picture' src=${advert.imageUrl} alt="">` +
+                    `<a href='about.html' class='aname'>${advert.name}</a>` +
+                    `<p class='price'><b>${advert.price} ₽</b></p>` +
+                    `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
+                    "</div>";
+            }
+        }
+    })
+}
+minPrice.addEventListener("change", priceSearching);
+maxPrice.addEventListener("change", priceSearching)
+let searchBut = document.getElementById("search-button");
+searchBut.addEventListener("click", searching);
 const changeIsFavorite = function(e, advert){
     advert.isFavorite = !(advert.isFavorite);
     if(advert.isFavorite){
@@ -60,11 +141,10 @@ const changeIsFavorite = function(e, advert){
         e.target.innerText = "♡";
     }
 }
-    let mainPage = document.getElementById("main-page");
     adverts.forEach((advert, index) => {
         mainPage.innerHTML += "<div class='item'>" +
             `<img class='picture' src=${advert.imageUrl} alt="">` +
-            `<p class='name'>${advert.name}</p>` +
+            `<a href='about.html' class='aname'>${advert.name}</a>` +
             `<p class='price'><b>${advert.price} ₽</b></p>` +
             `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
             "</div>";
@@ -90,7 +170,7 @@ const changeIsFavorite = function(e, advert){
             productItem.classList.add('product-item');
             productItem.innerHTML = "<div class='item'>" +
                 `<img class='picture' src=${advert.imageUrl} alt="">` +
-                `<p class='name'>${advert.name}</p>` +
+                `<p  class='name'>${advert.name}</p>` +
                 `<p class='price'><b>${advert.price} ₽</b></p>` +
                 `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
             "</div>";
