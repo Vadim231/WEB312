@@ -64,7 +64,7 @@ const changeIsFavorite = function(e, advert){
     adverts.forEach((advert, index) => {
         mainPage.innerHTML += "<div class='item'>" +
             `<img class='picture' src=${advert.imageUrl} alt="">` +
-            `<p class='name'>${advert.name}</p>` +
+            `<a href='about.html' class='aname'>${advert.name}</a>` +
             `<p class='price'><b>${advert.price} ₽</b></p>` +
             `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
             "</div>";
@@ -90,7 +90,7 @@ const changeIsFavorite = function(e, advert){
             productItem.classList.add('product-item');
             productItem.innerHTML = "<div class='item'>" +
                 `<img class='picture' src=${advert.imageUrl} alt="">` +
-                `<p class='name'>${advert.name}</p>` +
+                `<p  class='name'>${advert.name}</p>` +
                 `<p class='price'><b>${advert.price} ₽</b></p>` +
                 `<button id='btn${index}'>${advert.isFavorite ? "♥" : "♡"}</button>`+
             "</div>";
