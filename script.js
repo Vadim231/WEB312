@@ -4,12 +4,16 @@ class Adverta{
      * @param {number} price
      * @param {string} imageUrl
      * @param {boolean} isFavorite
+     * @param {string} color
+     * @param {string} state
      */
-    constructor(name, price, imageUrl, isFavorite) {
+    constructor(name, price, imageUrl, isFavorite, color, state) {
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;
         this.isFavorite = isFavorite;
+        this.color = color;
+        this.state = state;
     }
 }
 let adverts = [];
@@ -38,18 +42,18 @@ sectionsWithToggle.forEach(section => {
     }
 });
 
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false));
-adverts.push(new Adverta("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false));
-adverts.push(new Adverta("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Track 2", 8000, "https://i.siteapi.org/CankSLwN9POoXNIqsccvOz2m8Co=/0x0:962x630/s2.siteapi.org/44b0dfc585a3400/img/3ua6wqve4fcwocog48ogwcw04w8o0k", false, "Черный", "Новый"));
+adverts.push(new Adverta("Kingston Fury 32 gb", 35000, "https://brigo.ru/upload/iblock/b06/7irmzqb0cgqppmv2vd6rtlzahzkaptzo/1146087.jpeg",false, "Белый", "Б/У"));
+adverts.push(new Adverta("Футболка клещ рианна гоблин", 3500, "https://ae-pic-a1.aliexpress-media.com/kf/S0f289244045f4905b1831a7edc21937ai.jpg",true, "Черный", "Новый"));
 
 
 let mainPage = document.getElementById("main-page");
